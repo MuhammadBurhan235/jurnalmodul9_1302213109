@@ -6,13 +6,15 @@ namespace jurnalmodul9_1302213109.Controllers
     [Route("[controller]")]
     public class MovieController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        public static List<Movie> listNovie = new List<Movie>
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+            new Movie("Title1", "Direc1", "Des1", new List<string> {"Star 1", "Star2"});
+            new Movie("Title2", "Direc2", "Des2", new List<string> {"Star 3", "Star4"});
+
+        };
 
         private readonly ILogger<MovieController> _logger;
-
+          
         public MovieController(ILogger<MovieController> logger)
         {
             _logger = logger;
